@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: "Vazirmatn", sans-serif;
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  direction: rtl;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.lang-switch,
+.day-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+button {
+  padding: 10px 18px;
+  background-color: #1a1a1a;
+  color: #f1f1f1;
+  border: 1px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+button:hover {
+  background-color: #292929;
+}
+
+button.active {
+  background-color: #007bff;
+  color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 10px #007bff80;
+}
+
+.workout {
+  display: none;
+  background-color: #161616;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  transition: all 0.3s ease;
+}
+
+.workout h2 {
+  margin-top: 0;
+  color: #ffc107;
+  font-size: 22px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.workout p {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.workout ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.workout li {
+  margin-bottom: 12px;
+  padding: 14px 16px;
+  background: #212121;
+  border-radius: 8px;
+  border: 1px solid #333;
+  transition: transform 0.2s;
+}
+
+.workout li:hover {
+  transform: scale(1.01);
+  background-color: #262626;
+}
+
+.workout li strong {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #ffc107;
+}
+
+.workout li small {
+  display: block;
+  margin-top: 4px;
+  color: #bbb;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .workout {
+    padding: 16px;
+  }
+
+  button {
+    flex: 1 1 40%;
+    font-size: 14px;
+  }
+
+  .controls {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    flex: 1 1 100%;
+  }
+
+  .workout h2 {
+    font-size: 18px;
+  }
+}
+
+/* ======== استایل جدول برنامه غذایی ======== */
+.diet-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 0 auto;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  background-color: #1e1e1e;
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+  direction: rtl;
+  user-select: none;
+  
+}
+.diet-table thead th {
+  font-weight: 700;
+  padding: 10px 5px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 10px 10px 0 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  user-select: none;
+  word-wrap: break-word;
+}
+
+.diet-table tbody tr {
+  background-color: #2a2a2a;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.6);
+  transition: background-color 0.25s ease;
+}
+
+.diet-table tbody tr:hover {
+  background-color: #353535;
+}
+
+.diet-table tbody td {
+  padding: 12px 14px;
+  text-align: center;
+  vertical-align: middle;
+  border-left: 1px solid #444;
+  color: #ddd;
+  font-weight: normal;
+  white-space: normal;
+  line-height: 1.4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.diet-table tbody td:first-child {
+  border-left: none;
+  font-weight: 700;
+  color: #f9c74f;
+  width: 11%;
+  min-width: 70px;
+}
+
+.diet-table tbody td:nth-child(2) {
+  font-weight: 700;
+  color: #f9844a;
+  width: 1%;
+  min-width: 100px;
+}
+
+.diet-table tbody td:last-child {
+  text-align: justify;
+  color: #ccc;
+  width: 60%;
+  padding-left: 15px;
+}
+
+/* آیتم های هر وعده */
+.meal-items {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  justify-content: center;
+  font-weight: normal;
+  color: #ddd;
+}
+
+.meal-items span {
+  background: #444;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 13px;
+  user-select: text;
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.calories {
+  display: block;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #f9c74f;
+  text-align: center;
+  font-size: 13px;
+}
+
+/* ===== واکنش‌گرایی ===== */
+@media (max-width: 600px) {
+  .diet-table {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .diet-table thead th {
+    font-size: 13px;
+    padding: 12px 8px;
+  }
+
+  .diet-table tbody td {
+    padding: 10px 8px;
+  }
+
+  .meal-items {
+    gap: 5px 10px;
+  }
+
+  .meal-items span {
+    font-size: 12px;
+    padding: 3px 7px;
+  }
+
+  .calories {
+    font-size: 12px;
+  }
+}
+
+/* موبایل خیلی کوچک */
+@media (max-width: 380px) {
+  .diet-table tbody td:first-child,
+  .diet-table tbody td:nth-child(2) {
+    display: block;
+    width: 100%;
+    text-align: right;
+    padding-bottom: 6px;
+  }
+
+  .diet-table tbody td:last-child {
+    padding-left: 0;
+    text-align: right;
+  }
+
+  .meal-items {
+    justify-content: flex-start;
+    gap: 4px 8px;
+  }
+
+  .meal-items span {
+    font-size: 11px;
+    padding: 3px 6px;
+  }
+
+  .calories {
+    font-size: 11px;
+  }
+}
+
+.nav-link {
+  display: inline-block;
+  max-width: 480px;    /* اندازه مشابه جدول */
+  margin: 10px auto 30px auto;
+  padding: 10px 22px;
+  background-color: #f9c74f;
+  color: #222;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 6px 15px rgba(249, 199, 79, 0.7);
+  user-select: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: #e2b500;
+  box-shadow: 0 8px 20px rgba(226, 181, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+.nav-link:focus {
+  outline: 2px solid #f9844a;
+  outline-offset: 3px;
+}
